@@ -12,5 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run unit test
+      - name: Build Test Container 
         run: docker build -t test -f Dockerfile.test .
+      - name: Run Test Container
+        run: docker run test
